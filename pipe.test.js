@@ -1,7 +1,7 @@
 const { test } = require('ava')
-const pipe = require('.')
 
 test('pipe', t => {
+    const pipe = require('.')
 
     function reverse(str) {
         let reverse_str = '';
@@ -22,6 +22,8 @@ test('pipe', t => {
 })
 
 test('pipe.Promise', async t => {
+    const pipe = require('.').Promise
+    
     function stripChar(str, sep) {
         return new Promise(resolve => {
             const transformedStr = str.split('').reduce((newTransformedStr, char) => {
@@ -36,6 +38,6 @@ test('pipe.Promise', async t => {
     }
 
     // you can also pass in other arguments into the function
-    const newStr = await pipe(stripChar, 'Hello, World!', 'l')
+    const newStr = await pipe([stripChar], 'Hello, World!', 'l')
     return t.is(newStr, 'Heo, Word!')
 })

@@ -4,7 +4,7 @@ function pipe(arrFuncs, data, ...args) {
 	}
 	
 	return arrFuncs.reduce((newTransformedData, func) => {
-		data = func(newTransformedData, args)
+		data = func(newTransformedData, ...args)
 		return data;
 	}, data)
 }
@@ -16,8 +16,8 @@ async function asyncPipe(arrFuncs = [], data, ...args) {
 		arrFuncs = [ arrFuncs ]
 	}
 	arrFuns = arrFuncs.map(async func => await func)
-	// console.log(await pipe(arrFuncs, await args, await args))
-      return await pipe(arrFuncs, await data, await args)
+	
+    return await pipe(arrFuncs, await data, await args)
 }
 
 module.exports.Promise = asyncPipe;
