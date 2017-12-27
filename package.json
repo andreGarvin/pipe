@@ -1,0 +1,28 @@
+{
+  "name": "@andre_garvin/pipe",
+  "version": "0.0.0",
+  "description": "shell piping in nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreGarvin/pipeJS.git"
+  },
+  "keywords": [
+    "pipe",
+    "es6",
+    "promies",
+    "tool"
+  ],
+  "author": "Andre Garvin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreGarvin/pipeJS/issues"
+  },
+  "homepage": "https://github.com/andreGarvin/pipeJS#readme",
+  "devDependencies": {
+    "ava": "^0.24.0"
+  }
+}
